@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-02T00:45:11 IST" name="Default suite" finished-at="2025-08-02T00:45:15 IST" duration-ms="4244">
+    <groups>
+    </groups>
+    <test started-at="2025-08-02T00:45:11 IST" name="Default test" finished-at="2025-08-02T00:45:15 IST" duration-ms="4244">
+      <class name="com.api.reqres.tests.GetUserTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.api.reqres.tests.GetUserTest@3590fc5b]" started-at="2025-08-02T00:45:11 IST" name="setUp" finished-at="2025-08-02T00:45:12 IST" duration-ms="672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="getUser_allDetails()[pri:0, instance:com.api.reqres.tests.GetUserTest@3590fc5b]" started-at="2025-08-02T00:45:12 IST" name="getUser_allDetails" finished-at="2025-08-02T00:45:15 IST" duration-ms="3495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUser_allDetails -->
+      </class> <!-- com.api.reqres.tests.GetUserTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
