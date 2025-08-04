@@ -2,20 +2,20 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-02T00:45:11 IST" name="Default suite" finished-at="2025-08-02T00:45:15 IST" duration-ms="4244">
+  <suite started-at="2025-08-04T22:14:50 IST" name="Default suite" finished-at="2025-08-04T22:14:55 IST" duration-ms="4701">
     <groups>
     </groups>
-    <test started-at="2025-08-02T00:45:11 IST" name="Default test" finished-at="2025-08-02T00:45:15 IST" duration-ms="4244">
-      <class name="com.api.reqres.tests.GetUserTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.api.reqres.tests.GetUserTest@3590fc5b]" started-at="2025-08-02T00:45:11 IST" name="setUp" finished-at="2025-08-02T00:45:12 IST" duration-ms="672" status="PASS">
+    <test started-at="2025-08-04T22:14:50 IST" name="Default test" finished-at="2025-08-04T22:14:55 IST" duration-ms="4701">
+      <class name="com.api.reqres.tests.CreateUserTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.api.reqres.tests.CreateUserTest@2a65bb85]" started-at="2025-08-04T22:14:50 IST" name="setUp" finished-at="2025-08-04T22:14:51 IST" duration-ms="630" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="getUser_allDetails()[pri:0, instance:com.api.reqres.tests.GetUserTest@3590fc5b]" started-at="2025-08-02T00:45:12 IST" name="getUser_allDetails" finished-at="2025-08-02T00:45:15 IST" duration-ms="3495" status="PASS">
+        <test-method signature="createUser_shouldMatchJsonSchema()[pri:0, instance:com.api.reqres.tests.CreateUserTest@2a65bb85]" started-at="2025-08-04T22:14:51 IST" name="createUser_shouldMatchJsonSchema" finished-at="2025-08-04T22:14:55 IST" duration-ms="3877" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getUser_allDetails -->
-      </class> <!-- com.api.reqres.tests.GetUserTest -->
+        </test-method> <!-- createUser_shouldMatchJsonSchema -->
+      </class> <!-- com.api.reqres.tests.CreateUserTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

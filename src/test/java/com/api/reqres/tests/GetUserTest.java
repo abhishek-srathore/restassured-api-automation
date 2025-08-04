@@ -21,26 +21,25 @@ public class GetUserTest extends BaseTest{
 	@Test
 	public void getUser_shouldReturnUserDetail() {
 		given().
-			when().get("/api/users/2").
-					then().statusCode(200).body("data.last_name",equalTo("Weaver"));
+			when()
+				.get("/api/users/2").
+			then()
+				.statusCode(200)
+				.body("data.last_name",equalTo("Weaver"));
 	}
 	
 	@Test
 	public void getUser_allDetails() {
 		given().
 			contentType(ContentType.JSON).
-				when().get("/api/users/2").
-					then().statusCode(200)
-							.body("data.id", equalTo(2))
-							.body("data.first_name",equalTo("Janet"))
-							.body("data.last_name", equalTo("Weaver"))
-							.body("data.email", equalTo("janet.weaver@reqres.in"));
+		when().
+			get("/api/users/2").
+		then()
+			.statusCode(200)
+			.body("data.id", equalTo(2))
+			.body("data.first_name",equalTo("Janet"))
+			.body("data.last_name", equalTo("Weaver"))
+			.body("data.email", equalTo("janet.weaver@reqres.in"));
 	}
-	
-	
-	
-	
-	
-	
 	
 }

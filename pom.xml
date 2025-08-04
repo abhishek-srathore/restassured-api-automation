@@ -7,91 +7,126 @@
 	<groupId>com.api.reqres</groupId>
 	<artifactId>reqresApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<name>reqresApi</name>
-	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
+		<allure.results.directory>reports/allure-results</allure.results.directory>
+		<allure.report.directory>reports/allure-report</allure.report.directory>
 	</properties>
 
+	<dependencies>
+		<!-- Rest Assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.5.5</version>
+			<scope>test</scope>
+		</dependency>
 
-		<dependencies>
-			<!-- Rest Assured -->
-			<dependency>
-				<groupId>io.rest-assured</groupId>
-				<artifactId>rest-assured</artifactId>
-				<version>5.5.5</version>
-				<scope>test</scope>
-			</dependency>
+		<!-- JSON Path -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>5.5.5</version>
+		</dependency>
 
-			<!-- TestNG -->
-			<dependency>
-				<groupId>org.testng</groupId>
-				<artifactId>testng</artifactId>
-				<version>7.11.0</version>
-				<scope>test</scope>
-			</dependency>
+		<!-- JSON -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20240303</version>
+		</dependency>
 
-			<!-- JSON Path -->
-			<dependency>
-				<groupId>io.rest-assured</groupId>
-				<artifactId>json-path</artifactId>
-				<version>5.5.5</version>
-			</dependency>
+		<!-- TestNG -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.11.0</version>
+			<scope>test</scope>
+		</dependency>
 
-		</dependencies>
+		<!-- Log4j -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.20.0</version>
+		</dependency>
 
+		<!-- Allure TestNG Adapter -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.24.0</version>
+		</dependency>
+
+		<!-- AspectJ (required by Allure) -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.24</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+	
+	    <!-- Apache POI for Excel reading -->
+	    <dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+
+	</dependencies>
 
 	<build>
-		<pluginManagement><!-- lock down plugins versions to avoid using Maven
-			defaults (may be moved to parent pom) -->
-			<plugins>
-				<!-- clean lifecycle, see
-				https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
-				<plugin>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>3.4.0</version>
-				</plugin>
-				<!-- default lifecycle, jar packaging: see
-				https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-				<plugin>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.3.1</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.13.0</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.3.0</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.4.2</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>3.1.2</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.1.2</version>
-				</plugin>
-				<!-- site lifecycle, see
-				https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-				<plugin>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.12.1</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-project-info-reports-plugin</artifactId>
-					<version>3.6.1</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<plugins>
+			<!-- Surefire Plugin to run TestNG suite -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/testrunner/testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<allure.results.directory>${allure.results.directory}</allure.results.directory>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+
+			<!-- Allure Report Generator -->
+			<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>2.11.2</version>
+				<configuration>
+					<reportDirectory>${allure.report.directory}</reportDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

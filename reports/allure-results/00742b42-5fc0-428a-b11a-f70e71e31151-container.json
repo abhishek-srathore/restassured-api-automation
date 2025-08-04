@@ -1,0 +1,1 @@
+{"uuid":"00742b42-5fc0-428a-b11a-f70e71e31151","name":"com.api.reqres.tests.CreateUserTest","children":["3e9a4e11-08dc-4620-aea9-d91ad72df114"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1754165106687,"stop":1754165107319}],"afters":[],"start":1754165106618,"stop":1754165111689}
